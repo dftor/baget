@@ -8,8 +8,8 @@ const char GPIO_UNEXPORT[] = "sys/class/gpio/unexport";
 bool LOW = 0;
 bool HIGH = 1;
 
-bool INPUT = 0;
 bool OUTPUT = 1;
+bool INPUT = 0;
 
 void pinMode(uint8_t pin, bool mode);
 
