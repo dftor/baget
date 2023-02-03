@@ -1,16 +1,16 @@
 #ifndef GPIOCON_H
 #define GPIOCON_H
 
-const char GPIO_ROOT[] = "sys/class/gpio";
-const char GPIO_EXPORT[] = "sys/class/gpio/export";
-const char GPIO_UNEXPORT[] = "sys/class/gpio/unexport";
+#define GPIO_ROOT "sys/class/gpio"
+#define GPIO_EXPORT "sys/class/gpio/export"
+#define GPIO_UNEXPORT "sys/class/gpio/unexport"
 
-bool LOW = 0;
-bool HIGH = 1;
+#define LOW 0
+#define HIGH 1
 
-bool OUTPUT = 1;
-bool INPUT = 0;
-
-void pinMode(uint8_t pin, bool mode);
+int gpiocon_export(int gpio_index);
+int gpiocon_unexport(int gpio_index);
+int gpiocon_set_direction(int gpio_index);
+int gpiocon_set_value(int gpio_index);
 
 #endif
