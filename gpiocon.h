@@ -1,5 +1,5 @@
-#ifndef BAGET_H
-#define BAGET_H
+#ifndef GPIOCON_H
+#define GPIOCON_H
 
 const char GPIO_ROOT[] = "sys/class/gpio";
 const char GPIO_EXPORT[] = "sys/class/gpio/export";
