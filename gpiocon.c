@@ -27,7 +27,7 @@ void gpiocon_unexport(int gpiochip) {
 void gpiocon_set_direction(int gpiochip, const char *mode) {
 	char direction_path[256];
 	sprintf(direction_path,
-			"sys/class/gpio/gpio%d/direction",
+			"/sys/class/gpio/gpio%d/direction",
 			gpiochip);
 	FILE *direction_ptr = fopen(direction_path, "w");
 	if (direction_ptr == NULL) {
@@ -41,7 +41,7 @@ void gpiocon_set_direction(int gpiochip, const char *mode) {
 void gpiocon_set_value(int gpiochip, int value) {
 	char value_path[256];
 	sprintf(value_path,
-			"sys/class/gpio/gpio%d/value",
+			"/sys/class/gpio/gpio%d/value",
 			gpiochip);
 	FILE *value_ptr = fopen(value_path, "w");
 	if (value_ptr == NULL) {
