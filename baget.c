@@ -1,5 +1,4 @@
-#include "baget.h"
-#include "gpiocon.c"
+#include "gpiocon.h"
 
 int pin_to_gpiochip(const char *pin) {
 	int line = 464 + ('F' - pin[0]) * 8;
