@@ -2,7 +2,7 @@
 
 int pin_to_gpiochip(const char *pin) {
 	int line = 464 + ('F' - pin[0]) * 8;
-	int number = pin[2] - '0';
+	int number = pin[1] - '0';
 	int gpiochip = line + number;
 	return gpiochip;
 }
