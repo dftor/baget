@@ -5,9 +5,9 @@
 #define GPIO_EXPORT "sys/class/gpio/export"
 #define GPIO_UNEXPORT "sys/class/gpio/unexport"
 
-void gpiocon_export(int gpio_index);
-void gpiocon_unexport(int gpio_index);
-void gpiocon_set_direction(int gpio_index, const char *mode);
-void gpiocon_set_value(int gpio_index, int value);
+void gpiocon_export(int gpiochip);
+void gpiocon_unexport(int gpiochip);
+void gpiocon_set_direction(int gpiochip, const char *mode);
+void gpiocon_set_value(int gpiochip, int value);
 
 #endif

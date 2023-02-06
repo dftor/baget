@@ -4,31 +4,31 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void gpiocon_export(int gpio_index) {
+void gpiocon_export(int gpiochip) {
 	FILE *export_ptr = fopen(GPIO_EXPORT, "w");
 	if (export_ptr == NULL) {
-		perror("Eport error");
+		perror("Export error");
 		exit(EXIT_FAILURE);
 	}
-	fprintf(export_ptr, "%d", gpio_index);
+	fprintf(export_ptr, "%d", gpiochip);
 	fclose(export_ptr);
 }
 
-void gpiocon_unexport(int gpio_index) {
+void gpiocon_unexport(int gpiochip) {
 	FILE *unexport_ptr = fopen(GPIO_UNEXPORT, "w");
 	if (unexport_ptr == NULL) {
 		perror("Unexport error");
 		exit(EXIT_FAILURE);
 	}
-	fprintf(unexport_ptr, "%d", gpio_index);
+	fprintf(unexport_ptr, "%d", gpiochip);
 	fclose(unexport_ptr);
 }
 
-void gpiocon_set_direction(int gpio_index, const char *mode) {
+void gpiocon_set_direction(int gpiochip, const char *mode) {
 	char direction_path[256];
 	sprintf(direction_path,
 			"sys/class/gpio/gpio%d/direction",
-			gpio_index);
+			gpiochip);
 	FILE *direction_ptr = fopen(direction_path, "w");
 	if (direction_ptr == NULL) {
 		perror("Set direction error");
@@ -38,11 +38,11 @@ void gpiocon_set_direction(int gpio_index, const char *mode) {
 	fclose(direction_ptr);
 }
 
-void gpiocon_set_value(int gpio_index, int value) {
+void gpiocon_set_value(int gpiochip, int value) {
 	char value_path[256];
 	sprintf(value_path,
 			"sys/class/gpio/gpio%d/value",
-			gpio_index);
+			gpiochip);
 	FILE *value_ptr = fopen(value_path, "w");
 	if (value_ptr == NULL) {
 		perror("Set value error");
