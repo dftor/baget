@@ -6,12 +6,9 @@
 
 int gpiocon_export(int gpiochip) {
 	FILE *export_ptr = fopen(GPIO_EXPORT, "w");
-	if (export_ptr == NULL) {
-		return -1;
-	}
 	fprintf(export_ptr, "%d", gpiochip);
-	fclose(export_ptr);
-	return 0;
+	int export_result = fclose(export_ptr);
+	return export_result;
 }
 
 int gpiocon_unexport(int gpiochip) {

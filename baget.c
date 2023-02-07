@@ -1,5 +1,8 @@
 #include "gpiocon.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int pin_to_gpiochip(const char *pin) {
 	int line = 464 + ('F' - pin[0]) * 8;
 	int number = pin[1] - '0';
@@ -8,7 +11,7 @@ int pin_to_gpiochip(const char *pin) {
 }
 
 void print_error_termination_message() {
-	printf("The program terminated with an error\n");
+	printf("The program terminated with an error.\n");
 }
 
 void pinMode(const char *pin, const char *mode) {

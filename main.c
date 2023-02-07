@@ -1,7 +1,7 @@
 #include "baget.h"
 
 int main() {
-	const char *A1 = "A1";
+	const char *A10 = "A10";
 	const char *B2 = "B2";
 	const char *C3 = "C3";
 	const char *D4 = "D4";
