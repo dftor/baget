@@ -1,6 +1,6 @@
 #include "baget.h"
 
-#include <dos.h>
+#include <unistd.h>
 
 int main() {
 	const char *LED_GREEN = "E0";
