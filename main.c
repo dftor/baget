@@ -3,9 +3,9 @@
 #include <unistd.h>
 
 int main() {
-	const char *LED_GREEN = "E0";
-	const char *LED_YELLOW = "E1";
-	const char *LED_RED = "E2";
+	const char *LED_GREEN = "D2";
+	const char *LED_YELLOW = "B3";
+	const char *LED_RED = "C6";
 	
 	pinMode(LED_GREEN, OUTPUT);
 	pinMode(LED_YELLOW, OUTPUT);
