@@ -1,14 +1,18 @@
+TARGET = brk
+CC = gcc
 
-
-BagetProject : main.o gpiocon.o baget.o
-	gcc main.o gpiocon.o baget.o -o BagetProject
+$(TARGET) : main.o gpiocon.o baget.o
+	$(CC) main.o gpiocon.o baget.o -o $(TARGET)
 	
 main.o : main.c
-	gcc -c main.c -o main.o
+	$(CC) -c main.c -o main.o
 	
 gpiocon.o : gpiocon.c
-	gcc -c gpiocon.c -o gpiocon.o
+	$(CC) -c gpiocon.c -o gpiocon.o
 	
 baget.o : baget.c
-	gcc -c baget.c -o baget.o
+	$(CC) -c baget.c -o baget.o
+	
+clean :
+	rm $(TARGET) *.o
 	
