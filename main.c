@@ -3,9 +3,9 @@
 #include <dos.h>
 
 int main() {
-	const char *LED_GREEN = "C7";
-	const char *LED_YELLOW = "A7";
-	const char *LED_RED = "B3";
+	const char *LED_GREEN = "E0";
+	const char *LED_YELLOW = "E1";
+	const char *LED_RED = "E2";
 	
 	pinMode(LED_GREEN, OUTPUT);
 	pinMode(LED_YELLOW, OUTPUT);
