@@ -33,7 +33,7 @@ void pinMode(const char *pin, const char *mode) {
 
 void digitalWrite(const char *pin, int value) {
 	int gpiochip = pin_to_gpiochip(pin);
-	set_value_returned = gpiocon_set_value(gpiochip, value);
+	int set_value_returned = gpiocon_set_value(gpiochip, value);
 	if (set_value_returned == -1) {
 		printf("SET VALUE ERROR: Unable to set %d of %s pin!\n", value, pin);
 		print_error_termination_message();
