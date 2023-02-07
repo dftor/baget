@@ -7,6 +7,7 @@
 #define OUTPUT "out"
 
 int pin_to_gpiochip(const char *pin);
+void print_error_termination_message();
 
 void pinMode(const char *pin, const char *mode);
 void digitalWrite(const char *pin, int value);

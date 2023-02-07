@@ -7,8 +7,24 @@ int pin_to_gpiochip(const char *pin) {
 	return gpiochip;
 }
 
+void print_error_termination_message() {
+	printf("The program terminated with an error\n");
+}
+
 void pinMode(const char *pin, const char *mode) {
 	int gpiochip = pin_to_gpiochip(pin);
-	gpiocon_export(gpiochip);
-	gpiocon_set_direction(gpiochip, mode);
+	int export_returned = gpiocon_export(gpiochip);
+	if (export_returned == -1) {
+		printf("Export error: unable to export %s pin!\n", pin);
+		print_error_termination_message();
+		exit(EXIT_FAILURE);
+	}
+	
+	int direction_returned = gpiocon_set_direction(gpiochip, mode);
+	if (direction_returned == -1) {
+		printf("Set direction error: unable to set %s direction of %s pin!\n", 
+			   mode, pin);
+		print_error_termination_message();
+		exit(EXIT_FAILURE);
+	}
 }
