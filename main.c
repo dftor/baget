@@ -16,15 +16,15 @@ int main() {
 	
 	for (int i = 0; i < 5; i++) {
 		digitalWrite(LED_GREEN, HIGH);
-		delay(500);
+		sleep(1);
 		digitalWrite(LED_GREEN, LOW);
 		
 		digitalWrite(LED_YELLOW, HIGH);
-		delay(500);
+		sleep(1);
 		digitalWrite(LED_YELLOW, LOW);
 		
 		digitalWrite(LED_RED, HIGH);
-		delay(500);
+		sleep(1);
 		digitalWrite(LED_RED, LOW);
 	}
 	
