@@ -13,12 +13,9 @@ int gpiocon_export(int gpiochip) {
 
 int gpiocon_unexport(int gpiochip) {
 	FILE *unexport_ptr = fopen(GPIO_UNEXPORT, "w");
-	if (unexport_ptr == NULL) {
-		return -1;
-	}
 	fprintf(unexport_ptr, "%d", gpiochip);
-	fclose(unexport_ptr);
-	return 0;
+	int unexport_result = fclose(unexport_ptr);
+	return unexport_result;
 }
 
 int gpiocon_set_direction(int gpiochip, const char *mode) {
