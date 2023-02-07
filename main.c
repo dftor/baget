@@ -8,7 +8,7 @@ int main() {
 	const char *E5 = "E5";
 	const char *F6 = "F6";
 	
-	pinMode(A9, OUTPUT);
+	pinMode(A10, OUTPUT);
 	pinMode(B2, OUTPUT);
 	pinMode(C3, OUTPUT);
 	pinMode(D4, OUTPUT);
