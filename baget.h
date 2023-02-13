@@ -12,5 +12,7 @@ void print_error_termination_message();
 void pinMode(const char *pin, const char *mode);
 void digitalWrite(const char *pin, int value);
 int digitalRead(const char *pin);
+void pinFree(const char *pin);
+void delay(unsigned int delayTime);
 
 #endif

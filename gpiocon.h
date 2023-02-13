@@ -1,4 +1,3 @@
-#pragma once
 #ifndef GPIOCON_H
 #define GPIOCON_H
 
