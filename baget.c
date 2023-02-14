@@ -49,8 +49,8 @@ int digitalRead(const char *pin) {
 	int gpiochip = pin_to_gpiochip(pin);
 	int get_value_result = gpiocon_get_value(gpiochip);
 	if (get_value_result == -1) {
-		printf("GET_VALUE_ERROR: Unable to set %d of %s pin!\n",
-		       value, pin);
+		printf("GET_VALUE_ERROR: Unable to get value of %s pin!\n",
+		       pin);
 		print_error_termination_message();
 		exit(EXIT_FAILURE);
 	}
@@ -70,5 +70,5 @@ void pinFree(const char *pin) {
 
 void delay(unsigned int delayTime) {
 	unsigned int usecs = 1000 * delayTime;
-	uslep(usecs);
+	usleep(usecs);
 }

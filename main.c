@@ -9,7 +9,7 @@ int main() {
 		.bounceTime = 10
 	};
 	
-	State state = readState(&left);
+	printStateMessage(&left);
 	
 	return 0;
 }

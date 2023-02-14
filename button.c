@@ -1,5 +1,7 @@
 #include "button.h"
 
+#include <stdio.h>
+
 void printStateMessage(Button *button) {
 	char message[64];
 	const char *state = button->state == RELEASED 
@@ -8,7 +10,7 @@ void printStateMessage(Button *button) {
 	printf("%s\n", message);
 }
 
-State readState(Buttin *button) {
+State readState(Button *button) {
 	int digitalSignal = digitalRead(button->pin);
 	return (State)digitalSignal;
 }
