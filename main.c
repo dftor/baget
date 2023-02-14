@@ -1,7 +1,15 @@
 #include "button.h"
 
 int main() {
-	Button left = { 0, RELEASED, "E1", "LEFT", 10 };
+	Button left = {
+		.isNewState = 0,
+		.state = RELEASED,
+		.pin = "F1",
+		.name = "LEFT",
+		.bounceTime = 10
+	};
+	
+	State state = readState(&left);
 	
 	return 0;
 }

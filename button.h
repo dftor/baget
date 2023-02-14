@@ -9,15 +9,15 @@ typedef enum {
 } State;
 
 typedef struct {
-	int isNewState = 0;
-	State state = RELEASED;
-	const char *pin = NULL;
-	const char *name = NULL;
-	unsigned int bounceTime = 0;
+	int isNewState;
+	State state;
+	const char *pin;
+	const char *name;
+	unsigned int bounceTime;
 } Button;
 
 void printStateMessage(Button *button);
-State readState(Buttin *button);
+State readState(Button *button);
 void checkState(Button *button);
 
 #endif
