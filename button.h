@@ -1,8 +1,6 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include "baget.h"
-
 typedef enum {
 	RELEASED = 0,
 	PRESSED = 1
@@ -19,5 +17,7 @@ typedef struct {
 void printStateMessage(Button *button);
 State readState(Button *button);
 void checkState(Button *button);
+Button init(const char *pin, const char *name, unsigned int bounceTime);
+void clear(Button *button);
 
 #endif
